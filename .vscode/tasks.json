@@ -1,0 +1,28 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "npm run build",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "dev",
+            "type": "shell",
+            "command": "npm run dev",
+            "group": "none",
+            "isBackground": true,
+            "problemMatcher": []
+        },
+        {
+            "label": "deploy",
+            "type": "shell",
+            "command": "npm run deploy",
+            "group": "none"
+        }
+    ]
+}

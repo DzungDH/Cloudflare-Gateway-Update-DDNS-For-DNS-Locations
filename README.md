@@ -1,9 +1,57 @@
-#### This repository is used to update DDNS in Cloudflare gateway with GitHub Actions. The following secrets are needed to run the actions:
-- `CLOUDFLARE_API_KEY`: Your Cloudflare API key
-- `CLOUDFLARE_ACCOUNT_ID`: Your Cloudflare account ID
-- `CLOUDFLARE_ACCOUNT_EMAIL`: Your Cloudflare account email
-- `CLOUDFLARE_LOCATION_ID`: Your Cloudflare location ID
-- `CLOUDFLARE_LOCATION_NAME`: Your Cloudflare location name
-- `DDNS_HOSTNAME`: Your DDNS name
+# Cloudflare DDNS Updater
 
-#### By default, I set the action to run as a crontab every hour, but you can change it by yourself.
+A Cloudflare Worker that automatically updates DNS records based on dynamic IP changes.
+
+## Features
+
+- Automatic IP address detection using Google DNS
+- Updates Cloudflare Zero Trust Gateway location with new IP
+- Runs on a schedule (every 15 minutes by default)
+- TypeScript support for better code quality and maintainability
+- Built-in error handling and logging
+- Request timeout protection
+
+## Setup
+
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. Configure environment variables in your `.dev.vars` file:
+```env
+ACCOUNT_ID=your-account-id
+API_TOKEN=your-api-token
+DDNS_DOMAIN=your-domain.com
+```
+
+3. Update `wrangler.jsonc` with your settings:
+- Adjust the cron schedule if needed (default is every 15 minutes)
+- Change the LOCATION_NAME if different from "RouterZTE"
+
+## Development
+
+Run the worker locally:
+```bash
+npm run dev
+```
+
+## Deployment
+
+Deploy to Cloudflare Workers:
+```bash
+npm run deploy
+```
+
+## Security Features
+
+- Request timeout handling
+- Error boundary implementation
+- Proper error logging
+- Type safety with TypeScript
+- Secure headers management
+- Environment variable configuration
+
+## License
+
+MIT

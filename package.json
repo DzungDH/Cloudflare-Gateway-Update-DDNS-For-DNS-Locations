@@ -1,0 +1,20 @@
+{
+    "name": "cloudflare-ddns-updater",
+    "version": "1.0.0",
+    "description": "A Cloudflare Worker to automatically update DNS records based on dynamic IP changes",
+    "main": "src/index.js",
+    "scripts": {
+        "build": "wrangler build",
+        "dev": "wrangler dev",
+        "deploy": "wrangler deploy",
+        "format": "prettier --write '**/*.{js,ts,json}'"
+    },
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "@cloudflare/workers-types": "^4.20250801.0",
+        "prettier": "^3.2.5",
+        "typescript": "^5.5.2",
+        "wrangler": "^4.27.0"
+    }
+}

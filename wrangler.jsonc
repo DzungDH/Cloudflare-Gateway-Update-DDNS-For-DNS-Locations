@@ -1,0 +1,20 @@
+{
+    "name": "cloudflare-ddns-updater",
+    "compatibility_date": "2025-08-01",
+    "main": "src/index.ts",
+    "compatibility_flags": [
+        "nodejs_compat"
+    ],
+    "observability": {
+        "enabled": true
+    },
+    "triggers": {
+        "crons": [
+            "*/15 * * * *"
+        ]
+    },
+    "vars": {
+        "DDNS_DOMAIN": "legolas211.dynv6.net",
+        "LOCATION_NAME": "homelab"
+    }
+}
